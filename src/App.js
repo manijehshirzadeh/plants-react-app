@@ -23,7 +23,7 @@ let initialPlantsList = [
 ];
 
 function App() {
-  const [plantsList, setPlantsList] = useState(initialPlantsList);
+  const [plantsList] = useState(initialPlantsList);
   let newPlant = {
     name: "Lilly2",
     description:
@@ -32,7 +32,6 @@ function App() {
   };
   let newList = plantsList.push(newPlant);
   console.log(newList);
-  // setPlantsList(newList);
   return (
     <div className="App">
       {plantsList.map((plant) => (
