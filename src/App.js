@@ -23,7 +23,7 @@ let initialPlantsList = [
 ];
 
 function App() {
-  const [plantsList, setPlantsList] = useState(initialPlantsList);
+  const [plantsList] = useState(initialPlantsList);
   return (
     <div className="App">
       {plantsList.map((plant) => (
