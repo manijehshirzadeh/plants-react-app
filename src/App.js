@@ -24,8 +24,6 @@ let initialPlantsList = [
 
 function App() {
   const [plantsList, setPlantsList] = useState(initialPlantsList);
-  let newList = plantsList.push(newPlant);
-  console.log(newList);
   return (
     <div className="App">
       {plantsList.map((plant) => (
