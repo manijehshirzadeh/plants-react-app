@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Plant from "./Plant";
+import AddNewPlant from "./AddNewPlant";
 
 let initialPlantsList = [
   {
@@ -23,7 +24,13 @@ let initialPlantsList = [
 ];
 
 function App() {
-  const [plantsList] = useState(initialPlantsList);
+  const [plantsList, setPlantsList] = useState(initialPlantsList);
+  const handleAdd = (newPlant) => {
+    console.log(newPlant);
+    let newPlantsList = [...plantsList, newPlant];
+    console.log(newPlantsList);
+    setPlantsList(newPlantsList);
+  };
   return (
     <div className="App">
       {plantsList.map((plant) => (
@@ -34,6 +41,7 @@ function App() {
           instruction={plant.instruction}
         />
       ))}
+      <AddNewPlant onAdd={(newPlant) => handleAdd(newPlant)} />
     </div>
   );
 }
