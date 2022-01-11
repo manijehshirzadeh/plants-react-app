@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Plant from "./Plant";
 import AddNewPlant from "./AddNewPlant";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, BrowserRouter, Link } from "react-router-dom";
 let initialPlantsList = [
   {
     name: "Rose",
@@ -31,6 +31,7 @@ function App() {
     console.log(newPlantsList);
     setPlantsList(newPlantsList);
   };
+
   return (
     <BrowserRouter>
       <div className="App" style={{ padding: "10px 50px" }}>
@@ -48,6 +49,9 @@ function App() {
                   instruction={plant.instruction}
                 />
               ))}
+              <Link to={{ pathname: "/create" }}>
+                <button className="btn btn-primary">Add a New Plant</button>
+              </Link>
             </>
           </Route>
         </Switch>
