@@ -32,7 +32,7 @@ function App() {
     setPlantsList(newPlantsList);
   };
   return (
-    <div className="App">
+    <div className="App" style={{ padding: "10px 50px" }}>
       {plantsList.map((plant) => (
         <Plant
           key={plant.name}

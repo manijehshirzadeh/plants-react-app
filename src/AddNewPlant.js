@@ -28,24 +28,27 @@ function AddNewPlant(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className="form-group">
         <input
+          className="form-control"
           type="text"
           placeholder="Enter plant name"
           value={name}
           onChange={handleNameChange}
         />{" "}
       </div>
-      <div>
+      <div className="form-group">
         <input
+          className="form-control"
           type="text"
           placeholder="Enter plant species"
           value={species}
           onChange={handleSpeciesChange}
         />{" "}
       </div>
-      <div>
+      <div className="form-group">
         <textarea
+          className="form-control"
           type="text"
           placeholder="Enter watering instructions"
           rows="3"
@@ -53,7 +56,9 @@ function AddNewPlant(props) {
           onChange={handleInstruction}
         />
       </div>
-      <button type="submit">Add New Plant</button>
+      <button className="btn btn-primary" type="submit">
+        Add New Plant
+      </button>
     </form>
   );
 }
