@@ -1,6 +1,7 @@
 import { useState } from "react";
-
+import { useHistory } from "react-router-dom";
 function AddNewPlant(props) {
+  const history = useHistory();
   //   console.log(props);
   const [name, setName] = useState("");
   const [species, setSpecies] = useState("");
@@ -24,6 +25,7 @@ function AddNewPlant(props) {
     setName("");
     setSpecies("");
     setInstruction("");
+    history.push("/");
   };
 
   return (
