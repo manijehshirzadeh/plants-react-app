@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Plant from "./Plant";
 import AddNewPlant from "./AddNewPlant";
-
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 let initialPlantsList = [
   {
     name: "Rose",
@@ -32,17 +32,27 @@ function App() {
     setPlantsList(newPlantsList);
   };
   return (
-    <div className="App" style={{ padding: "10px 50px" }}>
-      {plantsList.map((plant) => (
-        <Plant
-          key={plant.name}
-          name={plant.name}
-          species={plant.species}
-          instruction={plant.instruction}
-        />
-      ))}
-      <AddNewPlant onAdd={(newPlant) => handleAdd(newPlant)} />
-    </div>
+    <BrowserRouter>
+      <div className="App" style={{ padding: "10px 50px" }}>
+        <Switch>
+          <Route path="/create">
+            <AddNewPlant onAdd={(newPlant) => handleAdd(newPlant)} />
+          </Route>
+          <Route path="/">
+            <>
+              {plantsList.map((plant) => (
+                <Plant
+                  key={plant.name}
+                  name={plant.name}
+                  species={plant.species}
+                  instruction={plant.instruction}
+                />
+              ))}
+            </>
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
