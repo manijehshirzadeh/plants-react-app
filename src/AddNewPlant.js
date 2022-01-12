@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-function AddNewPlant(props) {
+import { supabase } from "./supabaseClient";
+
+function AddNewPlant() {
   const history = useHistory();
-  //   console.log(props);
   const [name, setName] = useState("");
   const [species, setSpecies] = useState("");
   const [instruction, setInstruction] = useState("");
@@ -21,7 +22,13 @@ function AddNewPlant(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     let newPlant = { name: name, species: species, instruction: instruction };
-    props.onAdd(newPlant);
+    supabase
+      .from("plants")
+      .insert([newPlant])
+      .then(() => {
+        console.log("that works");
+      });
+
     setName("");
     setSpecies("");
     setInstruction("");
