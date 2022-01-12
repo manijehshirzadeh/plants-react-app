@@ -1,30 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Plant from "./Plant";
 import AddNewPlant from "./AddNewPlant";
 import { Route, Switch, BrowserRouter, Link } from "react-router-dom";
-let initialPlantsList = [
-  {
-    name: "Rose",
-    species: "This is very beautiful flower and has many colours",
-    instruction: "To water twice per day",
-  },
-  {
-    name: "Sunflower",
-    species:
-      "a genus comprising about 70 species of annual and perennial flowering plants in the daisy family Asteraceae.",
-    instruction: "To water twice per day",
-  },
-  {
-    name: "Lilly",
-    species:
-      "The lily is incredible for pollinators, attracting insects with its large colorful flowers and tasteful nectar. Certain species of lily are pollinated by wind, while others are pollinated by bees! Lilies have large petals that can be white, yellow, orange, red, purple or pink in color. They can even have freckles!",
-    instruction: "To water once per day",
-  },
-];
+import { supabase } from "./supabaseClient";
 
 function App() {
-  const [plantsList, setPlantsList] = useState(initialPlantsList);
+  const [plantsList, setPlantsList] = useState([]);
+  useEffect(() => {
+    supabase
+      .from("plants")
+      .select()
+      .then((data) => {
+        console.log(data);
+        setPlantsList(data.body);
+      });
+  }, []);
   const handleAdd = (newPlant) => {
     console.log(newPlant);
     let newPlantsList = [...plantsList, newPlant];
@@ -37,7 +28,7 @@ function App() {
       <div className="App" style={{ padding: "10px 50px" }}>
         <Switch>
           <Route path="/create">
-            <AddNewPlant onAdd={(newPlant) => handleAdd(newPlant)} />
+            <AddNewPlant />
           </Route>
           <Route path="/">
             <>
