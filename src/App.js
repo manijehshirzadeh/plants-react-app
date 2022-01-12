@@ -7,6 +7,7 @@ import { supabase } from "./supabaseClient";
 
 function App() {
   const [plantsList, setPlantsList] = useState([]);
+
   useEffect(() => {
     supabase
       .from("plants")
@@ -16,12 +17,6 @@ function App() {
         setPlantsList(data.body);
       });
   }, []);
-  const handleAdd = (newPlant) => {
-    console.log(newPlant);
-    let newPlantsList = [...plantsList, newPlant];
-    console.log(newPlantsList);
-    setPlantsList(newPlantsList);
-  };
 
   return (
     <BrowserRouter>
