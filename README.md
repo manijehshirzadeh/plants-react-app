@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Plants List, React + Supabase + Vercel + Bootstrap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**The live version of this app is available at [https://plants-react-app-manijehshirzadeh.vercel.app/](https://plants-react-app-manijehshirzadeh.vercel.app/)**
 
-## Available Scripts
+This project is to address this code test [Plant tracker app](https://gist.github.com/tristan-go/00cadfa3f8c0f3a9665e62bb05842e81).
+Also this is done as the final project of my `General Assembly JavaScript Web Development Course`.
 
-In the project directory, you can run:
+The Requirements of the application:
 
-### `yarn start`
+## AC1: Homepage: listing of all pages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+At the homepage, the app will show you the listing of all the added plants. Each plant item will have `Name`, `Species` and `Watering Instructions`.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## AC2: Add Plant Page: a form to add a new plant to the listing
 
-### `yarn test`
+This page has a form of three fields.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Bootstrap
 
-### `yarn build`
+Used Bootstrap to make the app looking good.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Supabase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The database for this app is created and hosted on Supabase.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Vercel
 
-### `yarn eject`
+Vercel is used to host and deploy the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# What's Next:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Make the `Add New Plant` button disabled in the form page, till the user enter all the inputs.
+- Add the ability to `add an image` for each plant. Currently cannot use the upload feature of the supabase. It's tricky
+- Add the ability to `delete` a plant from the list.
+- Add the ability to `edit` a plant.
