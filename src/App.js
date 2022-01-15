@@ -9,15 +9,16 @@ function App() {
   const [plantsList, setPlantsList] = useState([]);
 
   useEffect(() => {
-    supabase
-      .from("plants")
-      .select()
-      .then((data) => {
-        console.log(data);
-        setPlantsList(data.body);
-      });
-  }, []);
-
+    fetchPlants();
+  });
+  const fetchPlants = async () => {
+    let { data: plants, error } = await supabase.from("plants").select("*");
+    if (error) {
+      console.log("error", error);
+    } else {
+      setPlantsList(plants);
+    }
+  };
   return (
     <BrowserRouter>
       <div className="App" style={{ padding: "10px 50px" }}>
