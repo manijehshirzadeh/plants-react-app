@@ -5,6 +5,8 @@
 This project is to address this code test [Plant tracker app](https://gist.github.com/tristan-go/00cadfa3f8c0f3a9665e62bb05842e81).
 Also this is done as the final project of my `General Assembly JavaScript Web Development Course`.
 
+![demo](demo. gif)
+
 The Requirements of the application:
 
 ## AC1: Homepage: listing of all pages
