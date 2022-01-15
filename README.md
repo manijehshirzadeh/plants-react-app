@@ -8,6 +8,7 @@ Also this is done as the final project of my `General Assembly JavaScript Web De
 <kbd>
 ![](demo.gif)
 </kbd>
+
 The Requirements of the application:
 
 ## AC1: Homepage: listing of all pages
