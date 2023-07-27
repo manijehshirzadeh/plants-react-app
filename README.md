@@ -1,3 +1,4 @@
+App was offline, as Supabase put the database in pause, restored the database and now the app working with persistent data from Supabase.
 # Plants List, React + Supabase + Vercel + Bootstrap
 
 **The live version of this app is available at [https://plants-react-app-manijehshirzadeh.vercel.app/](https://plants-react-app-manijehshirzadeh.vercel.app/)**
